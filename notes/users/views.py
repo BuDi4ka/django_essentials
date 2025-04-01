@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from .forms import RegisterForm, LoginForm
@@ -33,3 +34,8 @@ def loginuser(request):
         return redirect(to='noteapp:main')
 
     return render(request, 'users/login.html', context={"form": LoginForm()})
+
+@login_required
+def logout(request):
+    logout(request)
+    return redirect(to='noteapp:main')

@@ -1,5 +1,7 @@
 # Python
+*.pyc
 __pycache__/
+*.pyc
 *.py[cod]
 *$py.class
 *.so
@@ -45,3 +47,4 @@ htmlcov/
 .coverage.*
 coverage.xml
 *.cover
+*.pyc

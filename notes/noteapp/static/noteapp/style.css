@@ -1,0 +1,7 @@
+.alert-error, .errorlist {
+    color: rgb(226, 0, 45);
+}
+
+.alert-success {
+    color: rgb(0, 255, 0);
+}

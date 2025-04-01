@@ -36,6 +36,6 @@ def loginuser(request):
     return render(request, 'users/login.html', context={"form": LoginForm()})
 
 @login_required
-def logout(request):
+def logoutuser(request):
     logout(request)
     return redirect(to='noteapp:main')

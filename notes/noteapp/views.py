@@ -4,7 +4,16 @@ from .models import Tag, Note
 
 # Create your views here.
 def main(request):
-    return render(request, 'noteapp/index.html')
+    notes = Note.objects.all()
+    return render(request, 'noteapp/index.html', {'notes': notes})
+
+def set_done(request, note_id):
+    Note.objects.filter(pk=note_id).update(done=True)
+    return redirect(to='noteapp:main')
+
+def delete_note(request, note_id):
+    Note.objects.get(pk=note_id).delete()
+    return redirect(to='noteapp:main')
 
 def tag(request):
     if request.method == 'POST':

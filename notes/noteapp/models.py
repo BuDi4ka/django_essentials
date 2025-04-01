@@ -26,4 +26,6 @@ class Note(models.Model):
         return f'{self.name}'
 
 
+
+
     

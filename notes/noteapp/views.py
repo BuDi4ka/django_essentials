@@ -60,4 +60,6 @@ def detail(request, note_id):
     note = get_object_or_404(Note, pk=note_id, user=request.user)
     return render(request, 'noteapp/detail.html', {"note": note})
 
-
+# @login_required
+# def profile(request):
+#     return render(request, 'users/profile.html')
